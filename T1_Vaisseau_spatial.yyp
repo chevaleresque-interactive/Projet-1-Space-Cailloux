@@ -36,7 +36,10 @@
   "name":"T1_Vaisseau_spatial",
   "resources":[
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
+    {"id":{"name":"obj_button1","path":"objects/obj_button1/obj_button1.yy",},},
+    {"id":{"name":"obj_button2","path":"objects/obj_button2/obj_button2.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
+    {"id":{"name":"obj_logo","path":"objects/obj_logo/obj_logo.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"ARENE","path":"rooms/ARENE/ARENE.yy",},},
