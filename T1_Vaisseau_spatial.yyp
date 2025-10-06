@@ -42,8 +42,8 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_quitter","path":"objects/obj_quitter/obj_quitter.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
-    {"id":{"name":"ARENE","path":"rooms/ARENE/ARENE.yy",},},
-    {"id":{"name":"MENU","path":"rooms/MENU/MENU.yy",},},
+    {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"rm_niveau","path":"rooms/rm_niveau/rm_niveau.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_button1_hover","path":"sprites/spr_button1_hover/spr_button1_hover.yy",},},
@@ -59,8 +59,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"MENU","path":"rooms/MENU/MENU.yy",},},
-    {"roomId":{"name":"ARENE","path":"rooms/ARENE/ARENE.yy",},},
+    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"roomId":{"name":"rm_niveau","path":"rooms/rm_niveau/rm_niveau.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

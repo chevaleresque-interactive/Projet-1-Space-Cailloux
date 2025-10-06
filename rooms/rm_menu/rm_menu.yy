@@ -1,14 +1,14 @@
 {
   "$GMRoom":"v1",
-  "%Name":"MENU",
+  "%Name":"rm_menu",
   "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_1BEF8F85","path":"rooms/MENU/MENU.yy",},
-    {"name":"inst_68FA2689","path":"rooms/MENU/MENU.yy",},
-    {"name":"inst_63ED19BB","path":"rooms/MENU/MENU.yy",},
+    {"name":"inst_1BEF8F85","path":"rooms/rm_menu/rm_menu.yy",},
+    {"name":"inst_68FA2689","path":"rooms/rm_menu/rm_menu.yy",},
+    {"name":"inst_63ED19BB","path":"rooms/rm_menu/rm_menu.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -40,7 +40,7 @@
         {"name":"g_RipplesRadius","type":0,"value":"0",},
       ],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"MENU",
+  "name":"rm_menu",
   "parent":{
     "name":"Pièces",
     "path":"folders/Pièces.yy",
