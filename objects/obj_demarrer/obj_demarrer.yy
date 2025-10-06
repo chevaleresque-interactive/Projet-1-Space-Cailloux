@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_button1",
+  "%Name":"obj_demarrer",
   "eventList":[],
   "managed":true,
-  "name":"obj_button1",
+  "name":"obj_demarrer",
   "overriddenProperties":[],
   "parent":{
     "name":"Objets",

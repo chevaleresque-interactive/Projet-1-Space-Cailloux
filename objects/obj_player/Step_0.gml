@@ -27,6 +27,6 @@ if (cooldown > 0) {
 
 if (mouse_check_button(mb_left) && cooldown <= 0) {
     instance_create_layer(x, y-25, "Instances", obj_bullet);
-    cooldown = room_speed / 8;
+    cooldown = 1; //room_speed/8 remplacé par 0.2 à tester.
 	effect_create_above(ef_spark, x, y, 0, c_orange);
 }
