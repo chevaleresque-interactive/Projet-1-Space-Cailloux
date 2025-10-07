@@ -1,30 +1,29 @@
-/// obj_menu_controller : Create
+/// obj_menu_controller : Créer
 
-// Initialise le tableau dans CET objet (important avant les with)
+// 1) Tableau des boutons présents dans la room (dans CET objet)
 btns = [];
 
-// Pour chaque type de bouton, si au moins une instance existe, on l’ajoute au tableau
+// 2) Collecte des instances existantes (menu ou game over)
+//    Utiliser other.btns pour pousser dans le tableau du contrôleur.
 if (instance_exists(obj_demarrer)) {
     with (obj_demarrer) array_push(other.btns, id);
 }
-
 if (instance_exists(obj_quitter)) {
     with (obj_quitter) array_push(other.btns, id);
 }
-
 if (instance_exists(obj_recommencer)) {
     with (obj_recommencer) array_push(other.btns, id);
 }
-
 if (instance_exists(obj_quitter2)) {
     with (obj_quitter2) array_push(other.btns, id);
 }
 
-// Index du bouton sélectionné pour navigation manette/clavier
+// 3) Sélection & entrée manette
 sel = 0;
-
-// Deadzone du stick
 deadzone = 0.25;
 
-// Variable globale pour validation
+// mémoire pour “edge” du stick vertical (évite l’auto-repeat trop rapide)
+prev_ly = 0;
+
+// Flag de validation lu/consommé par les boutons (réinitialisé à chaque Step)
 global.ui_confirm_pressed = false;
