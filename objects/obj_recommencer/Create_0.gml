@@ -1,5 +1,5 @@
-my_focus = false; // piloté par obj_menu_controller
-
+/// obj_recommencer : Créer
+my_focus = false;
 
 button_activate = function () {
     global.score = 0;

@@ -1,10 +1,12 @@
-// Dimensions GUI
-gw = display_get_gui_width();
-gh = display_get_gui_height();
+// Centre en coordonnées GUI
+var vw = display_get_gui_width(), vh = display_get_gui_height();
+var cx = vw * 0.5, cy = vh * 0.5;
 
-// Boutons (zones cliquables)
-btn_w = 380; btn_h = 72; sp = 16;
-bx_restart_x = gw*0.5 - btn_w*0.5;
-bx_restart_y = gh*0.5;
-bx_menu_x    = gw*0.5 - btn_w*0.5;
-bx_menu_y    = bx_restart_y + btn_h + sp;
+// Crée VOS boutons animés (instances réelles)
+btns = [
+    instance_create_layer(cx, cy - 60, "Instances", obj_demarrer),
+    instance_create_layer(cx, cy + 60, "Instances", obj_quitter)
+];
+
+sel = 0;                          // index du bouton sélectionné
+global.ui_confirm_pressed = false; // flag lu par les boutons pour valider

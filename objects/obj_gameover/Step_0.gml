@@ -1,31 +1,41 @@
-// Raccourcis clavier
-if (keyboard_check_pressed(vk_enter)) {
-    global.score = 0; room_goto(rm_niveau);
+// Sécurités si des instances sont détruites
+if (!is_array(btns) || array_length(btns) < 2) {
+    btns = [ instance_find(obj_demarrer, 0), instance_find(obj_quitter, 0) ];
 }
-if (keyboard_check_pressed(vk_escape)) {
-    global.score = 0; room_goto(rm_menu);
-}
+if (!variable_instance_exists(id, "sel")) sel = 0;
 
-// Souris
-var mx = device_mouse_x_to_gui(0), my = device_mouse_y_to_gui(0);
-if (mouse_check_button_pressed(mb_left)) {
-    if (point_in_rectangle(mx,my, bx_restart_x,bx_restart_y, bx_restart_x+btn_w, bx_restart_y+btn_h)) {
-        global.score = 0; room_goto(rm_niveau);
-    }
-    if (point_in_rectangle(mx,my, bx_menu_x,bx_menu_y, bx_menu_x+btn_w, bx_menu_y+btn_h)) {
-        global.score = 0; room_goto(rm_menu);
-    }
-}
+// ----- Navigation haut/bas : clavier + D-pad -----
+var moved = 0;
+if (keyboard_check_pressed(vk_up))   moved = -1;
+if (keyboard_check_pressed(vk_down)) moved =  1;
 
-// Manette (A pour Recommencer, B pour Menu)
 if (gamepad_is_connected(0)) {
-    if (gamepad_button_check_pressed(0, gp_face1)) { // A
-        global.score = 0; room_goto(rm_niveau);
+    if (gamepad_button_check_pressed(0, gp_padu)) moved = -1;
+    if (gamepad_button_check_pressed(0, gp_padd)) moved =  1;
+}
+
+if (moved != 0 && array_length(btns) > 0) {
+    sel = (sel + moved + array_length(btns)) mod array_length(btns);
+}
+
+// ----- Confirmer (Entrée / A) -----
+global.ui_confirm_pressed =
+    keyboard_check_pressed(vk_enter) ||
+    (gamepad_is_connected(0) && gamepad_button_check_pressed(0, gp_face1));
+
+// ----- Échap / B / Start → Menu (active le 2e bouton) -----
+if (keyboard_check_pressed(vk_escape) ||
+    (gamepad_is_connected(0) && (gamepad_button_check_pressed(0, gp_face2) || gamepad_button_check_pressed(0, gp_start))))
+{
+    if (array_length(btns) > 1 && instance_exists(btns[1])) {
+        with (btns[1]) button_activate();
     }
-    if (gamepad_button_check_pressed(0, gp_face2)) { // B
-        global.score = 0; room_goto(rm_menu);
-    }
-    if (gamepad_button_check_pressed(0, gp_start)) { // Start = Menu
-        global.score = 0; room_goto(rm_menu);
+}
+
+// ----- Forcer l’état "focus" pour l’animation hover de VOS boutons -----
+for (var i = 0; i < array_length(btns); i++) {
+    var b = btns[i];
+    if (instance_exists(b)) with (b) {
+        my_focus = (i == other.sel); // variable lue dans les boutons
     }
 }

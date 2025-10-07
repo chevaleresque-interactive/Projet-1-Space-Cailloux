@@ -7,13 +7,29 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_4F0E83EF","path":"rooms/rm_gameover/rm_gameover.yy",},
+    {"name":"inst_F43841D","path":"rooms/rm_gameover/rm_gameover.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_4F0E83EF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4F0E83EF","objectId":{"name":"obj_gameover","path":"objects/obj_gameover/obj_gameover.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":384.0,},
+        {"$GMRInstance":"v2","%Name":"inst_F43841D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F43841D","objectId":{"name":"obj_menu_controller","path":"objects/obj_menu_controller/obj_menu_controller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1248.0,"y":96.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+    {"$GMREffectLayer":"","%Name":"Effect_1","depth":100,"effectEnabled":true,"effectType":"_filter_old_film","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_1","properties":[
+        {"name":"g_OldFilmFlickerIntensity","type":0,"value":"0.2",},
+        {"name":"g_OldFilmFlickerSpeed","type":0,"value":"5",},
+        {"name":"g_OldFilmJitterIntensity","type":0,"value":"4",},
+        {"name":"g_OldFilmSaturation","type":0,"value":"0.5",},
+        {"name":"g_OldFilmSpeckIntensity","type":0,"value":"0.4",},
+        {"name":"g_OldFilmBarScale","type":0,"value":"1",},
+        {"name":"g_OldFilmBarSpeed","type":0,"value":"1",},
+        {"name":"g_OldFilmBarFrequency","type":0,"value":"40",},
+        {"name":"g_OldFilmRingScale","type":0,"value":"1",},
+        {"name":"g_OldFilmRingSharpness","type":0,"value":"64",},
+        {"name":"g_OldFilmRingIntensity","type":0,"value":"1",},
+        {"name":"g_OldFilmTexture","type":2,"value":"_filter_old_film_texture",},
+      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"rm_gameover",
   "parent":{
