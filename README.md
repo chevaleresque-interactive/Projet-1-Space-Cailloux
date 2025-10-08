@@ -1,6 +1,6 @@
 # 🚀 Space Cailloux Training Project n°1
 <p align="center">
-  <img src="MDpreview/scene.gif" alt="scene preview" width="409"/>
+  <img src="MDpreview/mdpreview2.gif" alt="scene preview" width="560"/>
 </p>
 
 This is my first training project in **GameMaker Studio 2**, based on the official tutorial:  
