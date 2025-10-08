@@ -1,4 +1,4 @@
-/// obj_quitter2 : Créer
+/// obj_retourmenu : Create
 my_focus = false;
 
 button_activate = function () {

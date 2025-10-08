@@ -1,29 +1,53 @@
-/// obj_menu_controller : Créer
+/// obj_menu_controller : Create
 
-// 1) Tableau des boutons présents dans la room (dans CET objet)
+// Tableau des boutons recensés dans la room (instances)
 btns = [];
 
-// 2) Collecte des instances existantes (menu ou game over)
-//    Utiliser other.btns pour pousser dans le tableau du contrôleur.
-if (instance_exists(obj_demarrer)) {
-    with (obj_demarrer) array_push(other.btns, id);
-}
-if (instance_exists(obj_quitter)) {
-    with (obj_quitter) array_push(other.btns, id);
-}
-if (instance_exists(obj_recommencer)) {
-    with (obj_recommencer) array_push(other.btns, id);
-}
-if (instance_exists(obj_quitter2)) {
-    with (obj_quitter2) array_push(other.btns, id);
-}
-
-// 3) Sélection & entrée manette
+// index du bouton sélectionné (pour la manette)
 sel = 0;
-deadzone = 0.25;
 
-// mémoire pour “edge” du stick vertical (évite l’auto-repeat trop rapide)
-prev_ly = 0;
+// Deadzone et antirepeat pour le stick
+deadzone  = 0.25;
+prev_ly   = 0;
+move_cool = 0;     // frames avant d'autoriser un nouveau déplacement
 
-// Flag de validation lu/consommé par les boutons (réinitialisé à chaque Step)
+// Flag global : les boutons valident quand my_focus && global.ui_confirm_pressed
 global.ui_confirm_pressed = false;
+
+// Première détection (au cas où les boutons sont déjà posés)
+scr__scan_buttons();
+
+function scr__scan_buttons() {
+    // Vide et rescannne les boutons existants, avec compatibilité de noms
+    btns = [];
+
+    var NAMES = [
+        "obj_reessayer",   // votre "réessayer"
+        "obj_retourmenu",  // votre "retour menu"
+        "obj_demarrer",
+        "obj_quitter"
+    ];
+
+    // Récupère toutes les instances correspondant aux noms ci-dessus
+    for (var i = 0; i < array_length(NAMES); i++) {
+        var idx = asset_get_index(NAMES[i]);
+        if (idx != -1 && instance_exists(idx)) {
+            // pousse TOUTES les instances de ce type (au cas où)
+            with (idx) array_push(other.btns, id);
+        }
+    }
+
+    // Tri par Y (du haut vers le bas) pour que ↑/↓ soit logique
+    if (array_length(btns) > 1) {
+        array_sort(btns, function(a, b) { return (a.y > b.y) - (a.y < b.y); });
+    }
+
+    // Focus initial (si rien n'était sélectionné)
+    if (array_length(btns) > 0) {
+        sel = clamp(sel, 0, array_length(btns) - 1);
+        for (var k = 0; k < array_length(btns); k++) {
+            var b = btns[k];
+            if (instance_exists(b)) with (b) my_focus = (k == other.sel);
+        }
+    }
+}
