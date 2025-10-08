@@ -10,10 +10,10 @@ I worked on this project **in depth**, expanding and refining it beyond the base
 It took me around 4 days for the code and less than an hour for the visuals.
 
 What I added :
-'- full keyboard-mouse & controller support
-'- some juice effect when the score increments
-'- animations on the background
-'- game over scene and navigation buttons (retry, menu, quit)
+- full keyboard-mouse & controller support
+- some juice effect when the score increments
+- animations on the background
+- game over scene and navigation buttons (retry, menu, quit)
 
 <p align="center">
   <img src="MDpreview/mdpreview1.gif" alt="Cute character preview" width="360"/>
