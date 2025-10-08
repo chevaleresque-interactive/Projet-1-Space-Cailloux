@@ -1,5 +1,6 @@
 // Affichage du score avec "juice"
 var x0 = 32, y0 = 32;
+draw_set_font(Font1);
 var txt = "SCORE : " + string(global.score);
 
 // Scale (1.0 → 1.35 au pic)

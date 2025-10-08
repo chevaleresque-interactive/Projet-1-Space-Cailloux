@@ -5,10 +5,10 @@ var gw = display_get_gui_width();
 var gh = display_get_gui_height();
 
 // --- Voile sombre ---
-draw_set_alpha(0.55);
-draw_set_color(c_black);
-draw_rectangle(0, 0, gw, gh, false);
-draw_set_alpha(1);
+//draw_set_alpha(0.55);
+//draw_set_color(c_black);
+//draw_rectangle(0, 0, gw, gh, false);
+//draw_set_alpha(1);
 
 // --- Ancrage : place le texte au-dessus du bouton du haut (selon ce qui existe) ---
 var y_buttons_top = gh * 0.5 - 60;
