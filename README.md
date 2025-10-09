@@ -7,7 +7,7 @@ This is my first training project in **GameMaker Studio 2**, based on the offici
 👉 [Make an Arcade Space Shooter](https://gamemaker.io/fr/tutorials/make-arcade-space-shooter)
 
 I worked on this project **in depth**, expanding and refining it beyond the base tutorial.
-It took me around 4 days for the code and less than an hour for the visuals.
+It took me around 17 hours for the code and 1 hour for the visuals.
 
 What I added :
 - full keyboard-mouse & controller support
