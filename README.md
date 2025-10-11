@@ -14,6 +14,7 @@ What I added :
 - some juice effect when the score increments
 - animations on the background
 - game over scene and navigation buttons (retry, menu, quit)
+- sound
 
 <p align="center">
   <img src="MDpreview/mdpreview1.gif" alt="Cute character preview" width="360"/>
