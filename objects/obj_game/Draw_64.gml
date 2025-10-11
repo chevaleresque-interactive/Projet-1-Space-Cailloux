@@ -1,5 +1,3 @@
-/// obj_game (ou HUD) : Draw GUI  — version safe
-
 // 0) Contexte propre (évite le décalage après rm_gameover)
 draw_set_alpha(1);
 gpu_set_blendmode(bm_normal);
@@ -15,7 +13,7 @@ else draw_set_font(-1);
 var x0 = 32, y0 = 32;
 var txt = "SCORE : " + string(global.score);
 
-// 2) Scale du "juice" (borne 0..1 par sécurité)
+// 2) Scale du juice
 var s = 1 + 0.35 * clamp(global._score_pulse, 0, 1);
 
 // 3) Ombre / halo

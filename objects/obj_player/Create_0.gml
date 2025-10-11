@@ -7,3 +7,5 @@ drag		= 0.02;  // traînée générique
 turn_brake	= 0.01;  // freinage additionnel quand on tourne fort
 max_speed	= 13;
 cooldown	= 0;
+
+deathsound = false;

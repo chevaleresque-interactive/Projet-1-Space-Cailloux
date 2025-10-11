@@ -5,3 +5,8 @@ effect_create_above(ef_firework, x, y, 1, c_red);
 speed = 0;
 visible = false; // ou laissez visible si vous avez une animation
 alarm[0] = room_speed * 0.5; // délai = 0.5 seconde
+
+if (!deathsound) {
+    audio_play_sound(son_death, 10, false);
+    deathsound = true;
+}

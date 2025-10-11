@@ -35,8 +35,6 @@ if (gp != -1) {
 var fire_pressed = mouse_check_button_pressed(mb_left);
 if (gp != -1) {
     fire_pressed = fire_pressed || gamepad_button_check_pressed(gp, gp_shoulderr); // RB
-    // Si vous souhaitez aussi le trigger droit analogique, décommentez:
-    // var trig = gamepad_axis_value(gp, 5); if (trig > 0.8) fire_pressed = true; // 5 = RT dans la plupart des runtimes
 }
 
 // 2) Accélération
@@ -83,6 +81,7 @@ if (cooldown > 0) cooldown--;
 
 // 9) Tir
 if (fire_pressed && cooldown <= 0) {
+	audio_play_sound(Son_shoot,10,false);
     var muzzle_offset = 25;
     var bx = x + lengthdir_x(muzzle_offset, image_angle);
     var by = y + lengthdir_y(muzzle_offset, image_angle);
