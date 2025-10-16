@@ -25,6 +25,8 @@
     {"name":"obj_reessayer","order":10,"path":"objects/obj_reessayer/obj_reessayer.yy",},
     {"name":"obj_retourmenu","order":11,"path":"objects/obj_retourmenu/obj_retourmenu.yy",},
     {"name":"obj_rock","order":2,"path":"objects/obj_rock/obj_rock.yy",},
+    {"name":"obj_seeker","order":14,"path":"objects/obj_seeker/obj_seeker.yy",},
+    {"name":"obj_spawner_seeker","order":13,"path":"objects/obj_spawner_seeker/obj_spawner_seeker.yy",},
     {"name":"Son","order":12,"path":"objects/Son/Son.yy",},
     {"name":"rm_gameover","order":17,"path":"rooms/rm_gameover/rm_gameover.yy",},
     {"name":"rm_menu","order":16,"path":"rooms/rm_menu/rm_menu.yy",},
@@ -47,6 +49,7 @@
     {"name":"spr_logostudio","order":11,"path":"sprites/spr_logostudio/spr_logostudio.yy",},
     {"name":"spr_rock_big","order":1,"path":"sprites/spr_rock_big/spr_rock_big.yy",},
     {"name":"spr_rock_small","order":2,"path":"sprites/spr_rock_small/spr_rock_small.yy",},
+    {"name":"spr_seeker","order":18,"path":"sprites/spr_seeker/spr_seeker.yy",},
     {"name":"Sprite10","order":9,"path":"sprites/Sprite10/Sprite10.yy",},
   ],
 }

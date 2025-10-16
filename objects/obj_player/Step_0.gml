@@ -82,7 +82,7 @@ move_wrap(true, true, 60);
 // 8) Cooldown de tir
 if (cooldown > 0) cooldown--;
 
-// 9) Tir (maintenu, cadencé)
+// 9) Tir (maintenu)
 if (fire_held && cooldown <= 0) {
     audio_play_sound(Son_shoot, 10, false);
 
@@ -92,7 +92,7 @@ if (fire_held && cooldown <= 0) {
 
     var b = instance_create_layer(bx, by, "Instances", obj_bullet);
     b.direction = image_angle;
-    b.speed     = 16;
+    b.speed     = 25; //Vitesse du projectile
 
     cooldown = FIRE_INTERVAL; // cadence contrôlée par FIRE_INTERVAL
     effect_create_above(ef_spark, bx, by, 0, c_orange);
