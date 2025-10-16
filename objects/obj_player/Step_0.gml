@@ -1,5 +1,8 @@
 /// obj_player : Step  — clavier + manette (générique)
 
+// --- Paramètre local de cadence (tir toutes les 0.20 s) ---
+var FIRE_INTERVAL = max(1, round(room_speed * 0.20));
+
 // Détection d'un pad (premier connecté)
 var gp = -1;
 for (var p = 0; p < 4; p++) if (gamepad_is_connected(p)) { gp = p; break; }
@@ -31,10 +34,10 @@ if (gp != -1) {
     if ( ly > DEAD) back   = max(back,   clamp( ly, 0, 1));
 }
 
-// Tir (souris + manette RB)
-var fire_pressed = mouse_check_button_pressed(mb_left);
+// Tir (souris + manette RB) — MAINTIEN
+var fire_held = mouse_check_button(mb_left);
 if (gp != -1) {
-    fire_pressed = fire_pressed || gamepad_button_check_pressed(gp, gp_shoulderr); // RB
+    fire_held = fire_held || gamepad_button_check(gp, gp_shoulderr); // RB
 }
 
 // 2) Accélération
@@ -79,9 +82,10 @@ move_wrap(true, true, 60);
 // 8) Cooldown de tir
 if (cooldown > 0) cooldown--;
 
-// 9) Tir
-if (fire_pressed && cooldown <= 0) {
-	audio_play_sound(Son_shoot,10,false);
+// 9) Tir (maintenu, cadencé)
+if (fire_held && cooldown <= 0) {
+    audio_play_sound(Son_shoot, 10, false);
+
     var muzzle_offset = 25;
     var bx = x + lengthdir_x(muzzle_offset, image_angle);
     var by = y + lengthdir_y(muzzle_offset, image_angle);
@@ -90,6 +94,6 @@ if (fire_pressed && cooldown <= 0) {
     b.direction = image_angle;
     b.speed     = 16;
 
-    cooldown = 1;
+    cooldown = FIRE_INTERVAL; // cadence contrôlée par FIRE_INTERVAL
     effect_create_above(ef_spark, bx, by, 0, c_orange);
 }
