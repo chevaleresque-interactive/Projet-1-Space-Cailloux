@@ -14,7 +14,9 @@ What I added :
 - some juice effect when the score increments
 - animations on the background
 - game over scene and navigation buttons (retry, menu, quit)
-- sound
+- souuuund !
+- A chasing and jiggling ennemy
+- Increasing difficulty during the game
 
 <p align="center">
   <img src="MDpreview/mdpreview1.gif" alt="Cute character preview" width="360"/>
