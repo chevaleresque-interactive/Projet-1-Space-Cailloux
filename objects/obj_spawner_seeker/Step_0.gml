@@ -31,9 +31,34 @@ if (global.score >=30) {
 if (global.score >=50) {
 	spawn_interval_sec =2;
 }
-if (global.score >=90) {
+if (global.score >=100) {
 	spawn_interval_sec =1.5;
 }
-if (global.score >=150) {
+if (global.score >=200) {
 	spawn_interval_sec =0.7;
+}
+if (global.score >=300) {
+	spawn_interval_sec =0.4;
+}
+if (global.score >=600) {
+	spawn_interval_sec =0.3;
+}
+if (global.score >=1000) {
+	spawn_interval_sec =0.1;
+}
+
+
+global._spawn_interval = spawn_interval_sec;
+
+// Niveaux (ex: 0=calme, 1=alerte, 2=danger, 3=mortel)
+if      (spawn_interval_sec <= 0.70) global.danger_level = 3;
+else if (spawn_interval_sec <= 1.50) global.danger_level = 2;
+else if (spawn_interval_sec <= 2.50) global.danger_level = 1;
+else                                 global.danger_level = 0;
+
+// Petit pulse quand on franchit un palier (optionnel)
+if (!variable_global_exists("_prev_danger_level")) global._prev_danger_level = -1;
+if (global.danger_level != global._prev_danger_level) {
+    global.hud_danger_pulse = 1.0; // sert à gonfler le texte brièvement
+    global._prev_danger_level = global.danger_level;
 }

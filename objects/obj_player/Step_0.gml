@@ -82,17 +82,32 @@ move_wrap(true, true, 60);
 // 8) Cooldown de tir
 if (cooldown > 0) cooldown--;
 
-// 9) Tir (maintenu)
+// 9) Tir (maintenu) + bonus
 if (fire_held && cooldown <= 0) {
     audio_play_sound(Son_shoot, 10, false);
 
     var muzzle_offset = 25;
+
+    // ----- Tir principal (axe du perso) -----
     var bx = x + lengthdir_x(muzzle_offset, image_angle);
     var by = y + lengthdir_y(muzzle_offset, image_angle);
 
     var b = instance_create_layer(bx, by, "Instances", obj_bullet);
     b.direction = image_angle;
-    b.speed     = 25; //Vitesse du projectile
+    b.speed     = 25; // Vitesse projectile
+
+    // ----- Tirs bonus (cumulables), direction aléatoire -----
+    // Chaque bonus ajoute 1 projectile tiré dans une direction aléatoire
+    var n = clamp(extra_shots, 0, max_extra_shots);
+    for (var i = 0; i < n; i++) {
+        var spread = 20; var ang = image_angle + irandom_range(-spread, spread); // direction conique
+        var bx2 = x + lengthdir_x(muzzle_offset, ang);
+        var by2 = y + lengthdir_y(muzzle_offset, ang);
+
+        var b2 = instance_create_layer(bx2, by2, "Instances", obj_bullet);
+        b2.direction = ang;
+        b2.speed     = 25;
+    }
 
     cooldown = FIRE_INTERVAL; // cadence contrôlée par FIRE_INTERVAL
     effect_create_above(ef_spark, bx, by, 0, c_orange);

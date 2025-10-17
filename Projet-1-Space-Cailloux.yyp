@@ -36,6 +36,7 @@
   "name":"Projet-1-Space-Cailloux",
   "resources":[
     {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
+    {"id":{"name":"obj_bonus","path":"objects/obj_bonus/obj_bonus.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_death","path":"objects/obj_death/obj_death.yy",},},
     {"id":{"name":"obj_demarrer","path":"objects/obj_demarrer/obj_demarrer.yy",},},
@@ -59,6 +60,7 @@
     {"id":{"name":"son_death","path":"sounds/son_death/son_death.yy",},},
     {"id":{"name":"Son_shoot","path":"sounds/Son_shoot/Son_shoot.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
+    {"id":{"name":"spr_bonus","path":"sprites/spr_bonus/spr_bonus.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_button1_hover","path":"sprites/spr_button1_hover/spr_button1_hover.yy",},},
     {"id":{"name":"spr_button1","path":"sprites/spr_button1/spr_button1.yy",},},

@@ -1,6 +1,7 @@
-spawn_interval_sec = 3.0;          // ← toutes les X secondes
-spawn_layer       = "Instances";   // ← nom de votre layer d’instances
-spawn_at_edges    = true;         // true = spawn sur les bords de l’écran
+spawn_interval_sec = 3.0;			// ← toutes les X secondes
+spawn_layer       = "Instances";	// ← nom de votre layer d’instances
+spawn_at_edges    = true;			// true = spawn sur les bords de l’écran
+var new_danger = 0;					// difficulté croissante
 
 // Référence du joueur (si vous avez plusieurs joueurs, vous pouvez affiner)
 target_player = noone;
