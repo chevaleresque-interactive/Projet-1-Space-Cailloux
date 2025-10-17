@@ -5,8 +5,8 @@ with (obj_bullet) shake = 6;
 
 //increment the score !
 global.score += 1;
-	global._score_pulse = 1.5;
-    global._score_color = make_color_rgb(255,190,0);
+global._score_pulse = 1.5;
+global._score_color = make_color_rgb(255,190,0);
 	
 if sprite_index == 
 spr_rock_big

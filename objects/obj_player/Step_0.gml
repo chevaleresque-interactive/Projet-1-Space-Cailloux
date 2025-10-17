@@ -37,7 +37,7 @@ if (gp != -1) {
 // Tir (souris + manette RB) — MAINTIEN
 var fire_held = mouse_check_button(mb_left);
 if (gp != -1) {
-    fire_held = fire_held || gamepad_button_check(gp, gp_shoulderr); // RB
+    fire_held = fire_held || gamepad_button_check(gp, gp_shoulderr) || gamepad_button_check(gp, gp_shoulderrb);
 }
 
 // 2) Accélération
@@ -100,7 +100,7 @@ if (fire_held && cooldown <= 0) {
     // Chaque bonus ajoute 1 projectile tiré dans une direction aléatoire
     var n = clamp(extra_shots, 0, max_extra_shots);
     for (var i = 0; i < n; i++) {
-        var spread = 20; var ang = image_angle + irandom_range(-spread, spread); // direction conique
+        var spread = 25; var ang = image_angle + irandom_range(-spread, spread); // direction conique
         var bx2 = x + lengthdir_x(muzzle_offset, ang);
         var by2 = y + lengthdir_y(muzzle_offset, ang);
 

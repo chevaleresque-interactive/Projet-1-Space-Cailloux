@@ -11,4 +11,4 @@ cooldown	= 0;
 deathsound = false;
 
 extra_shots = 0;        // nb projectiles bonus
-max_extra_shots = 10;    // plafond
+max_extra_shots = 20;    // plafond

@@ -2,27 +2,46 @@
 if (spawn_timer > 0) {
     spawn_timer--;
 } else {
-    // Calcul du point de spawn
-    var sx = x, sy = y;
+    // ======= Sélection d'une position de spawn suffisamment loin du joueur =======
+    var sx, sy;
+    var ok = false;
+    var tries = 0;
 
-    if (spawn_at_edges) {
-        // Apparition aléatoire au bord de l’écran
-        var edge = irandom(3);
-        switch (edge) {
-            case 0: sx = 0;             sy = irandom(room_height); break; // gauche
-            case 1: sx = room_width;    sy = irandom(room_height); break; // droite
-            case 2: sx = irandom(room_width); sy = 0;              break; // haut
-            case 3: sx = irandom(room_width); sy = room_height;    break; // bas
+    repeat (max_spawn_attempts) {
+        // Proposition de position
+        if (spawn_at_edges) {
+            var edge = irandom(3);
+            switch (edge) {
+                case 0: sx = 0;             sy = irandom(room_height); break; // gauche
+                case 1: sx = room_width;    sy = irandom(room_height); break; // droite
+                case 2: sx = irandom(room_width); sy = 0;              break; // haut
+                case 3: sx = irandom(room_width); sy = room_height;    break; // bas
+            }
+        } else {
+            sx = irandom(room_width);
+            sy = irandom(room_height);
         }
+
+        // Test de distance avec le joueur (si connu)
+        ok = true;
+        if (instance_exists(target_player)) {
+            var d = point_distance(sx, sy, target_player.x, target_player.y);
+            if (d < min_spawn_dist) ok = false;
+        }
+
+        if (ok) break;
+        tries++;
     }
 
-    // Création de l’ennemi
-    var e = instance_create_layer(sx, sy, spawn_layer, obj_seeker);
-
-    e.target = target_player;
+    // Création de l’ennemi si une position valide a été trouvée
+    if (ok) {
+        var e = instance_create_layer(sx, sy, spawn_layer, obj_seeker);
+        e.target = target_player;
+    }
+    // Sinon, on “skippe” ce cycle de spawn pour éviter un pop trop proche
 
     // Réinitialisation du timer
-    spawn_timer = round(room_speed * spawn_interval_sec);
+    spawn_timer = max(1, round(room_speed * spawn_interval_sec));
 }
 
 if (global.score >=30) {
@@ -59,6 +78,6 @@ else                                 global.danger_level = 0;
 // Petit pulse quand on franchit un palier (optionnel)
 if (!variable_global_exists("_prev_danger_level")) global._prev_danger_level = -1;
 if (global.danger_level != global._prev_danger_level) {
-    global.hud_danger_pulse = 1.0; // sert à gonfler le texte brièvement
+    global.hud_danger_pulse = 1.5; // sert à gonfler le texte brièvement
     global._prev_danger_level = global.danger_level;
 }
