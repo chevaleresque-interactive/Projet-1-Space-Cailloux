@@ -31,17 +31,29 @@ draw_text_transformed(x0, y0, txt, s, s, 0);
 
 // 1) Données & mapping
 var lvl = clamp(global.danger_level, 0, 3);
-var labels = array_create(4);
-labels[0] = "CALME";
-labels[1] = "ALERTE";
-labels[2] = "DANGER";
-labels[3] = "PANIQUE";
+var labels = array_create(10);
+labels[0] = "1/10 : CALME";
+labels[1] = "2/10 : ALERTE?";
+labels[2] = "3/10 : ALERTE!";
+labels[3] = "4/10 : DANGER";
+labels[4] = "5/10 : DANGER+";
+labels[5] = "6/10 : DANGER++";
+labels[6] = "7/10 : BIENTOT MILLE!";
+labels[7] = "8/10 : PANIQUE";
+labels[8] = "9/10 : PANIQUE+!";
+labels[9] = "10/10 : ADIEU.";
 
-var cols = array_create(4);
-cols[0] = make_color_rgb( 80,200,120); // vert
-cols[1] = c_yellow;                    // jaune
-cols[2] = make_color_rgb(255,128,  0); // orange
-cols[3] = c_red;                       // rouge
+var cols = array_create(10);
+cols[0] = c_lime;
+cols[1] = c_teal;                   
+cols[2] = c_blue;
+cols[3] = c_orange;  
+cols[4] = c_orange;
+cols[5] = c_orange;
+cols[6] = c_fuchsia;
+cols[7] = c_purple;
+cols[8] = c_red;
+cols[9] = c_maroon;// rouge
 
 var txt_r = "NIVEAU : " + labels[lvl];
 

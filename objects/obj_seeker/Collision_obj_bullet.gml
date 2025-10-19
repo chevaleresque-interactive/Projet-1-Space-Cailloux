@@ -20,6 +20,6 @@ if (base_hp <= 0) {
 
     instance_destroy(); // détruire l’ennemi quoi qu’il arrive
 } else {
-    // Touché mais vivant : petit feedback visuel
-    effect_create_above(ef_flare, x, y, 0, c_green);
+    // Touché mais vivant : feedback visuel
+    effect_create_above(ef_flare, x, y, 1000, c_green);
 }

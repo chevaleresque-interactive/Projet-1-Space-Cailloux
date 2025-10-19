@@ -60,19 +60,34 @@ if (global.score >=300) {
 	spawn_interval_sec =0.4;
 }
 if (global.score >=600) {
-	spawn_interval_sec =0.3;
+	spawn_interval_sec =0.25;
+}
+if (global.score >=900) {
+	spawn_interval_sec =0.1;
 }
 if (global.score >=1000) {
-	spawn_interval_sec =0.1;
+	spawn_interval_sec =0.05;
+}
+if (global.score >=1500) {
+	spawn_interval_sec =0.01;
+}
+if (global.score >=4000) {
+	spawn_interval_sec =0.002;
 }
 
 
 global._spawn_interval = spawn_interval_sec;
 
-// Niveaux (ex: 0=calme, 1=alerte, 2=danger, 3=mortel)
-if      (spawn_interval_sec <= 0.70) global.danger_level = 3;
-else if (spawn_interval_sec <= 1.50) global.danger_level = 2;
-else if (spawn_interval_sec <= 2.50) global.danger_level = 1;
+// Niveaux de danger
+if      (spawn_interval_sec <= 0.002)global.danger_level = 9;
+else if	(spawn_interval_sec <= 0.01) global.danger_level = 8;
+else if	(spawn_interval_sec <= 0.05) global.danger_level = 7;
+else if	(spawn_interval_sec <= 0.10) global.danger_level = 6;
+else if	(spawn_interval_sec <= 0.25) global.danger_level = 5;
+else if	(spawn_interval_sec <= 0.40) global.danger_level = 4;
+else if	(spawn_interval_sec <= 0.70) global.danger_level = 3;
+else if	(spawn_interval_sec <= 1.5)	 global.danger_level = 2;
+else if (spawn_interval_sec <= 2)	 global.danger_level = 1;
 else                                 global.danger_level = 0;
 
 // Petit pulse quand on franchit un palier (optionnel)
