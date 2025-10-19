@@ -59,16 +59,16 @@ if (global.score >=200) {
 if (global.score >=300) {
 	spawn_interval_sec =0.4;
 }
-if (global.score >=600) {
+if (global.score >=500) {
 	spawn_interval_sec =0.25;
 }
-if (global.score >=900) {
+if (global.score >=750) {
 	spawn_interval_sec =0.1;
 }
 if (global.score >=1000) {
 	spawn_interval_sec =0.05;
 }
-if (global.score >=1500) {
+if (global.score >=2000) {
 	spawn_interval_sec =0.01;
 }
 if (global.score >=4000) {
@@ -93,6 +93,6 @@ else                                 global.danger_level = 0;
 // Petit pulse quand on franchit un palier (optionnel)
 if (!variable_global_exists("_prev_danger_level")) global._prev_danger_level = -1;
 if (global.danger_level != global._prev_danger_level) {
-    global.hud_danger_pulse = 1.5; // sert à gonfler le texte brièvement
+    global.hud_danger_pulse = 1.8; // sert à gonfler le texte brièvement
     global._prev_danger_level = global.danger_level;
 }
