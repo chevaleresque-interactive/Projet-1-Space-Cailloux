@@ -4,6 +4,7 @@ global._score_pulse = 0;          // juice du score
 global._score_color = c_white;
 global.danger = 0; //niveau affiché de danger
 extra_shots =0;
+dead = false;
 
 // ========= 2) Nettoyage de tout ce qui pourrait traîner =========
 with (obj_player)	instance_destroy();

@@ -10,3 +10,5 @@ if (!deathsound) {
     audio_play_sound(son_death, 10, false);
     deathsound = true;
 }
+
+instance_destroy(other);
