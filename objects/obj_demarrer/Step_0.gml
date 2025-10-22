@@ -1,4 +1,3 @@
-/// obj_demarrer : Étape
 // Détection souris (en GUI)
 var over = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
                               bbox_left, bbox_top, bbox_right, bbox_bottom);

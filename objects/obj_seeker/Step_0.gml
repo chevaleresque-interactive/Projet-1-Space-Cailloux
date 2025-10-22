@@ -9,6 +9,14 @@ if (target == noone) {
 if (instance_exists(target)) {
     direction = point_direction(x, y, target.x, target.y);
     speed     = base_speed;
+
+    // Gestion du sens du sprite
+    if (target.x < x) {
+        image_xscale = 1; // Regarde vers la gauche (sprite original)
+    } else {
+        image_xscale = -1; // Miroir horizontal : regarde vers la droite
+    }
+
 } else {
     speed = 0;
 }
