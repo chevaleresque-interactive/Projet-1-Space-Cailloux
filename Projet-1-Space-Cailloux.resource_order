@@ -51,7 +51,7 @@
     {"name":"spr_logostudio","order":11,"path":"sprites/spr_logostudio/spr_logostudio.yy",},
     {"name":"spr_rock_big","order":1,"path":"sprites/spr_rock_big/spr_rock_big.yy",},
     {"name":"spr_rock_small","order":2,"path":"sprites/spr_rock_small/spr_rock_small.yy",},
-    {"name":"spr_seeker","order":18,"path":"sprites/spr_seeker/spr_seeker.yy",},
+    {"name":"spr_seeker","order":20,"path":"sprites/spr_seeker/spr_seeker.yy",},
     {"name":"Sprite10","order":9,"path":"sprites/Sprite10/Sprite10.yy",},
   ],
 }
