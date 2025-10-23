@@ -1,4 +1,4 @@
-// ========= 1) Réinit des variables globales =========
+// 1) Réinit des variables globales
 global.score        = 0;          // score remis à zéro à chaque (re)démarrage de niveau
 global._score_pulse = 0;          // juice du score
 global._score_color = c_white;
@@ -6,18 +6,18 @@ global.danger = 0; //niveau affiché de danger
 extra_shots =0;
 dead = false;
 
-// ========= 2) Nettoyage de tout ce qui pourrait traîner =========
+// 2) Nettoyage
 with (obj_player)	instance_destroy();
 with (obj_bullet)	instance_destroy();
 with (obj_rock)		instance_destroy();
 with (obj_seeker)	instance_destroy();
 
-// ========= 3) (Re)spawn du joueur =========
+// 3) spawn du joueur
 var px = room_width  * 0.5;
 var py = room_height * 0.5;
 var p  = instance_create_layer(px, py, "Instances", obj_player);
 
-// ========= 4) Spawn initial des rochers =========
+// 4) Spawn des rochers
 var N = 8; // nombre de gros rochers au départ
 for (var i = 0; i < N; i++) {
     // position initiale
@@ -34,9 +34,9 @@ for (var i = 0; i < N; i++) {
     var r = instance_create_layer(rx, ry, "Instances", obj_rock);
     r.image_angle = irandom(359);
     r.direction   = irandom(359);
-    r.speed       = random_range(1.2, 2.4); // vitesse de départ aléatoire
+    r.speed       = random_range(1.3, 2.4); // vitesse de départ aléatoire
 }
 
-// ========= 5) Qualité de vie =========
+
 window_set_caption("Space Cailloux");
 if (gamepad_is_connected(0)) gamepad_set_axis_deadzone(0, 0.25); // deadzone

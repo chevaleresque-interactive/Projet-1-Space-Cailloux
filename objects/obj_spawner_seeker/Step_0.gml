@@ -22,7 +22,7 @@ if (spawn_timer > 0) {
             sy = irandom(room_height);
         }
 
-        // Test de distance avec le joueur (si connu)
+        // Test de distance avec le joueur
         ok = true;
         if (instance_exists(target_player)) {
             var d = point_distance(sx, sy, target_player.x, target_player.y);
@@ -38,9 +38,8 @@ if (spawn_timer > 0) {
         var e = instance_create_layer(sx, sy, spawn_layer, obj_seeker);
         e.target = target_player;
     }
-    // Sinon, on “skippe” ce cycle de spawn pour éviter un pop trop proche
 
-    // Réinitialisation du timer
+    // Réinitialisation timer
     spawn_timer = max(1, round(room_speed * spawn_interval_sec));
 }
 
